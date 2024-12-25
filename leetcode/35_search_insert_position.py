@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/search-insert-position/description/
+
 def searchInsert(nums, target):
     lo = 0
     hi = len(nums) - 1
