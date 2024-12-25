@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/first-bad-version/description/
 
 def isBadVersion(n):
-    pass
+    pass 
 
 def firstBadVersion(n):
     low = 1
