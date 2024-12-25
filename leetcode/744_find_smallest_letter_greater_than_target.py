@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/
+
 def nextGreatestLetter(letters, target):
     low = 0
     high = len(letters) - 1
@@ -12,8 +14,6 @@ def nextGreatestLetter(letters, target):
     if ans == "":
         return letters[0]
     return ans            
-
-    #return letters[0]
         
 
 letters = ["x","x","y","y"]
