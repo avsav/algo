@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/arranging-coins/description/
+
 def arrangeCoins(n):
     def f(k):
         return k * (k + 1) // 2 
