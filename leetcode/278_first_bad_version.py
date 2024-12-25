@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/first-bad-version/description/
+
 def firstBadVersion(n):
     low = 1
     high = n
