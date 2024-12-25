@@ -9,7 +9,6 @@ def fib(n):
 
 # memoization fib
 def mfib(n):
-    if n == 0: return 0
     arr = []
     arr.append(0)
     arr.append(1)
@@ -30,7 +29,7 @@ print
 
 t2 = time.perf_counter()
 ans2 = mfib(n)
-print(f"Fib elapsed time: {time.perf_counter() - t2}")
+print(f"Memo fib elapsed time: {time.perf_counter() - t2}")
 print(ans2)
 
 
