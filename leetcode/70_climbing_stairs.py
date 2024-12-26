@@ -29,9 +29,10 @@ class Solution(object):
         def odpf(n):
             prev = next = 1
             for i in range(2, n + 1):
-                prev = next
-                next = prev + next
-            return next        
+                tmp = next
+                next = next + prev
+                prev = tmp
+            return next     
         
         return odpf(n)
     
