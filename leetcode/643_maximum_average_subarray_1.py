@@ -2,16 +2,17 @@
 
 def findMaxAverage(nums, k):
     n = len(nums)
-    i = 0
-    max = -10**10
+    sum = 0
+    for j in range(k):
+        sum += nums[j]
+    i = 1
+    max = sum
     while(i + k <= n):
-        sum = 0
-        for j in range(i, i + k):
-            sum += nums[j]
+        sum = sum - nums[i - 1] + nums[i + k - 1]
         if sum > max: max = sum
         i += 1
     return max/k
 
-nums = [5]
-k = 1
+nums = [1,12,-5,-6,50,3]
+k = 4
 print(findMaxAverage(nums, k))
