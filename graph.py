@@ -1,7 +1,7 @@
 class Graph:
     # Constructor
         # Adjacancy list
-        def __init__(self, num_of_nodes, directed=True):
+        def __init__(self, num_of_nodes, directed=False):
             self._num_of_nodes = num_of_nodes
             self._nodes = range(self._num_of_nodes)
 
@@ -27,11 +27,11 @@ class Graph:
                 print("node", key, ": ", self._adj_list[key])            
                 
         # BFS
-        def bfs(self):
+        def bfs(self, start_node):
             pass
 
         # DFS
-        def dfs(self):
+        def dfs(self, start_node):
             pass
 
         # Dijkstra
@@ -43,7 +43,6 @@ class Graph:
 
 graph = Graph(5)
 
-graph.add_edge(0, 0, 25)
 graph.add_edge(0, 1, 5)
 graph.add_edge(0, 2, 3)
 graph.add_edge(1, 3, 1)
