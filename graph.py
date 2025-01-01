@@ -1,4 +1,4 @@
-from queue import Queue
+from collections import deque
 
 class Graph:
     # Constructor
@@ -29,8 +29,22 @@ class Graph:
                 print("node", key, ": ", self._adj_list[key])            
                 
         # BFS
-        def bfs(self, start_node):
-            pass
+        def bfs(self, start_node, target):
+            q = deque()
+            q.appendleft(start_node)
+            visited = set()
+            visited.add(start_node)
+
+            while (q):
+                node = q.popleft()
+                for neighbor in self._adj_list[node]:   
+                    if neighbor not in visited:
+                        q.appendleft(neighbor) 
+                        visited.add(node)
+                        if (neighbor == target):
+                            return True
+            return False
+
 
         # DFS
         def dfs(self, start_node):
@@ -51,6 +65,7 @@ graph.add_edge(1, 3, 1)
 graph.add_edge(1, 4, 15)
 graph.add_edge(4, 2, 7)
 graph.add_edge(4, 3, 11)
-graph.remove_edge(0, 2, 3)
+#graph.remove_edge(0, 2, 3)
+#graph.bfs(0, (4,7))
 
 graph.print_adj_list()

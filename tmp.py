@@ -1,4 +1,5 @@
 import time
+from collections import deque
 
 
 # fib
@@ -16,7 +17,7 @@ def mfib(n):
         arr.append(arr[i - 1] + arr[i - 2])
     return arr[n]
 
-
+'''
 n = 40
 
 t1 = time.perf_counter()
@@ -34,3 +35,35 @@ print(ans2)
 
 
 #print(mfib(n))
+'''
+
+
+# BFS
+def bfs(graph, start_node, target):
+    q = deque()
+    q.appendleft(start_node)
+    visited = set()
+    visited.add(start_node)
+
+    while (q):
+        node = q.popleft()
+        for neighbor in graph[node]:   
+            if neighbor not in visited:
+                q.appendleft(neighbor) 
+                visited.add(node)
+                if (neighbor == target):
+                    return True
+    return False
+
+
+
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': [],
+    'F': []
+}
+
+print(bfs(graph, 'A', 'E'))
