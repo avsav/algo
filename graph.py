@@ -1,7 +1,7 @@
 class Graph:
     # Constructor
         # Adjacancy list
-        def __init__(self, num_of_nodes, directed=False):
+        def __init__(self, num_of_nodes, directed=True):
             self._num_of_nodes = num_of_nodes
             self._nodes = range(self._num_of_nodes)
 
@@ -18,8 +18,8 @@ class Graph:
                 self._adj_list[node2].add((node1, weight))
 
         # Removing edge
-        def remove_edge(self, node1, node2):
-            pass
+        def remove_edge(self, node1, node2, weight=1):
+            self._adj_list[node1].remove((node2, weight))
 
         # Print adjacency list
         def print_adj_list(self):
@@ -35,7 +35,7 @@ class Graph:
             pass
 
         # Dijkstra
-        def dijkstra(self):
+        def dijkstra(self, start_node):
             pass
     
 
@@ -50,5 +50,6 @@ graph.add_edge(1, 3, 1)
 graph.add_edge(1, 4, 15)
 graph.add_edge(4, 2, 7)
 graph.add_edge(4, 3, 11)
+graph.remove_edge(0, 2, 3)
 
 graph.print_adj_list()
