@@ -25,25 +25,23 @@ class Graph:
 
         # Print adjacency list
         def print_adj_list(self):
-            for key in self._adj_list.keys():
-                print("node", key, ": ", self._adj_list[key])            
+            for key, value in self._adj_list.items():
+                print(key, ":", value)            
                 
         # BFS
-        def bfs(self, start_node, target):
-            q = deque()
-            q.appendleft(start_node)
-            visited = set()
-            visited.add(start_node)
-
-            while (q):
-                node = q.popleft()
+        def bfs(self, start, target):
+            queue = [(start, [start])]
+            #print(queue)
+            while (queue):
+                (node, path) = queue.pop(0)
                 for neighbor in self._adj_list[node]:   
-                    if neighbor not in visited:
-                        q.appendleft(neighbor) 
-                        visited.add(node)
+                    if neighbor not in path:
                         if (neighbor == target):
-                            return True
-            return False
+                            return path + [neighbor]
+                        #else:
+                            #queue.append((neighbor, path + [neighbor]))    
+            print(path + [neighbor])
+
 
 
         # DFS
@@ -66,6 +64,6 @@ graph.add_edge(1, 4, 15)
 graph.add_edge(4, 2, 7)
 graph.add_edge(4, 3, 11)
 #graph.remove_edge(0, 2, 3)
-#graph.bfs(0, (4,7))
+graph.bfs(1, 4)
 
-graph.print_adj_list()
+#graph.print_adj_list()
