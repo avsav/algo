@@ -27,30 +27,31 @@ class Graph:
                 
         # BFS
         def bfs(self, start, target):
-            queue = [(start, [start])]
             dist = 0
-            
+            queue = [(start, [start], dist)]
+
             while (queue):
-                (node, path) = queue.pop(0)
+                (node, path, dist) = queue.pop(0)
                 for neighbor, weight in self._adj_list[node].items():   
                     if neighbor not in path:
-                        dist += weight
                         if (neighbor == target):
-                            return path + [neighbor], dist
+                            return path + [neighbor], dist + weight
                         else:
-                            queue.append((neighbor, path + [neighbor]))    
+                            queue.append((neighbor, path + [neighbor], dist + weight))    
 
         # DFS
         def dfs(self, start, target):
-            stack = [(start, [start])]
+            dist = 0
+            stack = [(start, [start], dist)]
+            
             while (stack):
-                (node, path) = stack.pop()
-                for neighbor in self._adj_list[node]:   
+                (node, path, dist) = stack.pop()
+                for neighbor, weight in self._adj_list[node].items():   
                     if neighbor not in path:
                         if (neighbor == target):
-                            return path + [neighbor]
+                            return path + [neighbor], dist + weight
                         else:
-                            stack.append((neighbor, path + [neighbor])) 
+                            stack.append((neighbor, path + [neighbor], dist + weight))    
 
         # Dijkstra
         def dijkstra(self, start, target):
@@ -78,7 +79,7 @@ graph2.add_edge(3, 4, 11)
 graph2.add_edge(4, 2, 7)
 
 
-print(graph1.bfs(0, 5)[0])
-#print(graph1.dfs(0, 7))
+print(graph2.bfs(0, 4))
+print(graph2.dfs(0, 4))
 
 #graph1.print_adj_list()
