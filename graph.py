@@ -69,6 +69,7 @@ graph1.add_edge(2, 5, 7)
 graph1.add_edge(3, 6, 4)
 graph1.add_edge(3, 7, 8)
 graph1.add_edge(2, 8, 9)
+graph1.add_edge(5, 7, 2)
 
 graph2 = Graph(5)
 graph2.add_edge(0, 1, 5)
@@ -80,6 +81,6 @@ graph2.add_edge(4, 2, 7)
 
 
 print(graph1.bfs(0, 7))
-#print(graph2.dfs(0, 4))
+print(graph1.dfs(0, 7))
 
 #graph1.print_adj_list()
