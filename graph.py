@@ -54,7 +54,7 @@ class Graph:
                         stack.append((neighbor, path + [neighbor], dist + weight))    
 
     # Dijkstra
-    def dijkstra(self, start, target):
+    def dijkstra(self, start):
         pass
     
 
