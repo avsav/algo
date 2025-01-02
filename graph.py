@@ -39,24 +39,40 @@ class Graph:
                             queue.append((neighbor, path + [neighbor]))    
 
         # DFS
-        def dfs(self, start_node):
-            pass
+        def dfs(self, start, target):
+            stack = [(start, [start])]
+            while (stack):
+                (node, path) = stack.pop()
+                for neighbor in self._adj_list[node]:   
+                    if neighbor not in path:
+                        if (neighbor == target):
+                            return path + [neighbor]
+                        else:
+                            stack.append((neighbor, path + [neighbor])) 
 
         # Dijkstra
-        def dijkstra(self, start_node):
+        def dijkstra(self, start, target):
             pass
     
 
 
 
-graph = Graph(5)
+graph1 = Graph(5)
+graph1.add_edge(0, 1, 5)
+graph1.add_edge(0, 2, 3)
+graph1.add_edge(1, 3, 1)
+graph1.add_edge(1, 4, 15)
+graph1.add_edge(2, 5, 7)
 
-graph.add_edge(0, 1, 5)
-graph.add_edge(0, 2, 3)
-graph.add_edge(1, 3, 1)
-graph.add_edge(1, 4, 15)
-graph.add_edge(2, 5, 7)
+graph2 = Graph(5)
+graph2.add_edge(0, 1, 5)
+graph2.add_edge(0, 2, 3)
+graph2.add_edge(1, 3, 1)
+graph2.add_edge(1, 4, 15)
+graph2.add_edge(4, 2, 7)
+graph2.add_edge(4, 3, 11)
 
-print(graph.bfs(0, 4))
+print(graph1.bfs(0, 4))
+print(graph1.dfs(0, 4))
 
-#graph.print_adj_list()
+#graph1.print_adj_list()
