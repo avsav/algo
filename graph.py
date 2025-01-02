@@ -24,7 +24,7 @@ class Graph:
         # Print adjacency list
         def print_adj_list(self):
             for key, value in self._adj_list.items():
-                print(key, ":", value)            
+                print(f"{key}: {value}")            
                 
         # BFS
         def bfs(self, start, target):
