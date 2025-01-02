@@ -57,7 +57,7 @@ class Graph:
 
 
 
-graph1 = Graph(7)
+graph1 = Graph(9)
 graph1.add_edge(0, 1, 5)
 graph1.add_edge(0, 2, 3)
 graph1.add_edge(1, 3, 1)
@@ -65,6 +65,7 @@ graph1.add_edge(1, 4, 15)
 graph1.add_edge(2, 5, 7)
 graph1.add_edge(3, 6, 4)
 graph1.add_edge(3, 7, 8)
+graph1.add_edge(2, 8, 9)
 
 graph2 = Graph(5)
 graph2.add_edge(0, 1, 5)

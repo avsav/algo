@@ -36,3 +36,5 @@ print(ans2)
 #print(mfib(n))
 '''
 
+d = {node: dict() for node in range(5)} 
+print(d)
