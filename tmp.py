@@ -36,5 +36,12 @@ print(ans2)
 #print(mfib(n))
 '''
 
-d = {node: dict() for node in range(5)} 
-print(d)
+#d = {node: dict() for node in range(5)} 
+#print(d)
+
+di = {0: {1: 5, 2: 3},
+      1: {3: 1, 4: 15},
+      2: {5: 7, 8: 9},
+      3: {6: 4, 7: 8}
+     }
+

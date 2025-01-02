@@ -28,6 +28,7 @@ class Graph:
         # BFS
         def bfs(self, start, target):
             queue = [(start, [start])]
+            dist = 0
             while (queue):
                 (node, path) = queue.pop(0)
                 for neighbor in self._adj_list[node]:   
@@ -71,10 +72,11 @@ graph2.add_edge(0, 1, 5)
 graph2.add_edge(0, 2, 3)
 graph2.add_edge(1, 3, 1)
 graph2.add_edge(1, 4, 15)
+graph2.add_edge(3, 4, 11)
 graph2.add_edge(4, 2, 7)
-graph2.add_edge(4, 3, 11)
+
 
 #print(graph1.bfs(0, 5))
-print(graph1.dfs(0, 7))
+#print(graph1.dfs(0, 7))
 
-#graph1.print_adj_list()
+graph1.print_adj_list()
