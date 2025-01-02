@@ -31,10 +31,11 @@ class Graph:
             dist = 0
             while (queue):
                 (node, path) = queue.pop(0)
-                for neighbor in self._adj_list[node]:   
+                for neighbor, weight in self._adj_list[node].items():   
                     if neighbor not in path:
+                        dist += weight
                         if (neighbor == target):
-                            return path + [neighbor]
+                            return path + [neighbor], dist
                         else:
                             queue.append((neighbor, path + [neighbor]))    
 
@@ -76,7 +77,7 @@ graph2.add_edge(3, 4, 11)
 graph2.add_edge(4, 2, 7)
 
 
-#print(graph1.bfs(0, 5))
+print(graph1.bfs(0, 5)[0])
 #print(graph1.dfs(0, 7))
 
-graph1.print_adj_list()
+#graph1.print_adj_list()
