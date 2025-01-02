@@ -1,61 +1,61 @@
 class Graph:
-        # Constructor
-        def __init__(self, num_of_nodes, directed=True):
-            self._num_of_nodes = num_of_nodes
-            self._nodes = range(self._num_of_nodes)
+    # Constructor
+    def __init__(self, num_of_nodes, directed=True):
+        self._num_of_nodes = num_of_nodes
+        self._nodes = range(self._num_of_nodes)
 
-            # Define the type of a graph
-            self._directed = directed
-            # Adjacancy list
-            self._adj_list = {node: dict() for node in self._nodes}   
+        # Define the type of a graph
+        self._directed = directed
+        # Adjacancy list
+        self._adj_list = {node: dict() for node in self._nodes}   
 
-        # Adding edge
-        def add_edge(self, node1, node2, weight=1):
-            self._adj_list[node1].update({node2: weight})
+    # Adding edge
+    def add_edge(self, node1, node2, weight=1):
+        self._adj_list[node1].update({node2: weight})
 
-            if not self._directed:
-                self._adj_list[node2].update({node1: weight})
+        if not self._directed:
+            self._adj_list[node2].update({node1: weight})
 
-        # Removing edge
-        def remove_edge(self, node1, node2, weight=1):
-            self._adj_list[node1].pop(node2, weight)
+    # Removing edge
+    def remove_edge(self, node1, node2, weight=1):
+        self._adj_list[node1].pop(node2, weight)
 
-        # Print adjacency list
-        def print_adj_list(self):
-            for key, value in self._adj_list.items():
-                print(f"{key}: {value}")            
-                
-        # BFS
-        def bfs(self, start, target):
-            dist = 0
-            queue = [(start, [start], dist)]
-
-            while (queue):
-                (node, path, dist) = queue.pop(0)
-                for neighbor, weight in self._adj_list[node].items():   
-                    if neighbor not in path:
-                        if (neighbor == target):
-                            return path + [neighbor], dist + weight
-                        else:
-                            queue.append((neighbor, path + [neighbor], dist + weight))    
-
-        # DFS
-        def dfs(self, start, target):
-            dist = 0
-            stack = [(start, [start], dist)]
+    # Print adjacency list
+    def print_adj_list(self):
+        for key, value in self._adj_list.items():
+            print(f"{key}: {value}")            
             
-            while (stack):
-                (node, path, dist) = stack.pop()
-                for neighbor, weight in self._adj_list[node].items():   
-                    if neighbor not in path:
-                        if (neighbor == target):
-                            return path + [neighbor], dist + weight
-                        else:
-                            stack.append((neighbor, path + [neighbor], dist + weight))    
+    # BFS
+    def bfs(self, start, target):
+        dist = 0
+        queue = [(start, [start], dist)]
 
-        # Dijkstra
-        def dijkstra(self, start, target):
-            pass
+        while (queue):
+            (node, path, dist) = queue.pop(0)
+            for neighbor, weight in self._adj_list[node].items():   
+                if neighbor not in path:
+                    if (neighbor == target):
+                        return path + [neighbor], dist + weight
+                    else:
+                        queue.append((neighbor, path + [neighbor], dist + weight))    
+
+    # DFS
+    def dfs(self, start, target):
+        dist = 0
+        stack = [(start, [start], dist)]
+
+        while (stack):
+            (node, path, dist) = stack.pop()
+            for neighbor, weight in self._adj_list[node].items():   
+                if neighbor not in path:
+                    if (neighbor == target):
+                        return path + [neighbor], dist + weight
+                    else:
+                        stack.append((neighbor, path + [neighbor], dist + weight))    
+
+    # Dijkstra
+    def dijkstra(self, start, target):
+        pass
     
 
 
@@ -79,7 +79,7 @@ graph2.add_edge(3, 4, 11)
 graph2.add_edge(4, 2, 7)
 
 
-print(graph2.bfs(0, 4))
-print(graph2.dfs(0, 4))
+print(graph1.bfs(0, 7))
+#print(graph2.dfs(0, 4))
 
 #graph1.print_adj_list()
