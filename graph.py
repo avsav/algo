@@ -19,7 +19,7 @@ class Graph:
 
         # Removing edge
         def remove_edge(self, node1, node2, weight=1):
-            self._adj_list[node1].remove((node2, weight))
+            self._adj_list[node1].pop(node2, weight)
 
         # Print adjacency list
         def print_adj_list(self):
