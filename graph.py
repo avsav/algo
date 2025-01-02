@@ -8,15 +8,14 @@ class Graph:
             # Define the type of a graph
             self._directed = directed
 
-            self._adj_list = {node: set() for node in self._nodes}   
+            self._adj_list = {node: dict() for node in self._nodes}   
 
         # Adding edge
         def add_edge(self, node1, node2, weight=1):
-            d = (node2, weight)
-            self._adj_list[node1].add(dict(d))
+            self._adj_list[node1].update({node2: weight})
 
-            #if not self._directed:
-            #    self._adj_list[node2].add((node1, weight))
+            if not self._directed:
+                self._adj_list[node2].update({node1: weight})
 
         # Removing edge
         def remove_edge(self, node1, node2, weight=1):
