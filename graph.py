@@ -1,13 +1,12 @@
 class Graph:
-    # Constructor
-        # Adjacancy list
+        # Constructor
         def __init__(self, num_of_nodes, directed=True):
             self._num_of_nodes = num_of_nodes
             self._nodes = range(self._num_of_nodes)
 
             # Define the type of a graph
             self._directed = directed
-
+            # Adjacancy list
             self._adj_list = {node: dict() for node in self._nodes}   
 
         # Adding edge
