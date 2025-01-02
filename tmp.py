@@ -66,4 +66,12 @@ graph = {
     'F': []
 }
 
-print(bfs(graph, 'A', 'E'))
+#print(bfs(graph, 'A', 'E'))
+d = {
+    0 : {2: 3, 1: 5},
+    1 : {0: 3, 4: 7},
+    2 : {4: 11, 1: 1}
+}
+
+for i in d[1]:
+    print(i)

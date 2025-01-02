@@ -1,5 +1,3 @@
-from collections import deque
-
 class Graph:
     # Constructor
         # Adjacancy list
@@ -14,10 +12,11 @@ class Graph:
 
         # Adding edge
         def add_edge(self, node1, node2, weight=1):
-            self._adj_list[node1].add((node2, weight))
+            d = (node2, weight)
+            self._adj_list[node1].add(dict(d))
 
-            if not self._directed:
-                self._adj_list[node2].add((node1, weight))
+            #if not self._directed:
+            #    self._adj_list[node2].add((node1, weight))
 
         # Removing edge
         def remove_edge(self, node1, node2, weight=1):
@@ -31,15 +30,14 @@ class Graph:
         # BFS
         def bfs(self, start, target):
             queue = [(start, [start])]
-            #print(queue)
             while (queue):
                 (node, path) = queue.pop(0)
                 for neighbor in self._adj_list[node]:   
                     if neighbor not in path:
                         if (neighbor == target):
                             return path + [neighbor]
-                        #else:
-                            #queue.append((neighbor, path + [neighbor]))    
+                        else:
+                            queue.append((neighbor, path + [neighbor]))    
             print(path + [neighbor])
 
 
@@ -64,6 +62,6 @@ graph.add_edge(1, 4, 15)
 graph.add_edge(4, 2, 7)
 graph.add_edge(4, 3, 11)
 #graph.remove_edge(0, 2, 3)
-graph.bfs(1, 4)
+#graph.bfs(0, 4)
 
-#graph.print_adj_list()
+graph.print_adj_list()
