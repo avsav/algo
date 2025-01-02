@@ -63,6 +63,7 @@ class Graph:
 graph1 = Graph(9)
 graph1.add_edge(0, 1, 5)
 graph1.add_edge(0, 2, 3)
+#graph1.add_edge(0, 7, 6)
 graph1.add_edge(1, 3, 1)
 graph1.add_edge(1, 4, 15)
 graph1.add_edge(2, 5, 7)
