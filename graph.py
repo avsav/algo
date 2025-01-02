@@ -37,9 +37,6 @@ class Graph:
                             return path + [neighbor]
                         else:
                             queue.append((neighbor, path + [neighbor]))    
-            print(path + [neighbor])
-
-
 
         # DFS
         def dfs(self, start_node):
@@ -59,6 +56,7 @@ graph.add_edge(0, 2, 3)
 graph.add_edge(1, 3, 1)
 graph.add_edge(1, 4, 15)
 graph.add_edge(2, 5, 7)
-graph.bfs(0, 4)
+
+print(graph.bfs(0, 4))
 
 #graph.print_adj_list()
