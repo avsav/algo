@@ -29,6 +29,7 @@ class Graph:
         def bfs(self, start, target):
             queue = [(start, [start])]
             dist = 0
+            
             while (queue):
                 (node, path) = queue.pop(0)
                 for neighbor, weight in self._adj_list[node].items():   
