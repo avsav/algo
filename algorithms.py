@@ -1,7 +1,7 @@
 from random import randrange
 
 
-#### Quicksort ####
+#### Quick sort ####
 def partition(arr, p, r):
     k = randrange(p, r + 1)
     arr[k], arr[r] = arr[r], arr[k]
@@ -21,6 +21,9 @@ def quicksort(arr, p, r):
         quicksort(arr, q + 1, r)
 
 
+#### Merge sort ####
+
+
 #### Binary search ####
 def binary_search(nums, target):
     low = 0
@@ -36,7 +39,7 @@ def binary_search(nums, target):
     return -1
  
 
- 
+'''
 arr0 = [2, 8, 7, 1, 3, 5, 6, 4]
 arr1 = [1, 2, 7, 3, 4, 0, -1, 3, 8, 10, 12, 1, 6, 4, -10, 20]
 arr2 = [1, 1, 1, 1, 1]
@@ -44,3 +47,4 @@ arr3 = [5, 4, 3, 2, 1, 0]
 #partition(arr0, 0, len(arr0) - 1)
 quicksort(arr0, 0, len(arr0) - 1)
 print(arr0)
+'''
