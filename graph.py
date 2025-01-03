@@ -85,17 +85,18 @@ class Graph:
                 if dist_to_neighbor < dist_from_start[neighbor]:
                     dist_from_start[neighbor] = dist_to_neighbor
                     prev[neighbor] = current
-
+                    
+            # No reason to continue when current == target
             if current == target:
                 break
             
         shortest_path = []
         current = target
-        while prev[current]:
+        while prev[current] is not None:
             shortest_path.insert(0, current)
             current = prev[current]
         shortest_path.insert(0, start)
-        
+
         return shortest_path, dist_from_start[target]
 
         
