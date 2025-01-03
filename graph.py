@@ -22,7 +22,7 @@ class Graph:
 
     # Removing node
     def remove_node(self, node):
-        pass
+        self._adj_list.pop(node)
 
     # Print adjacency list
     def print_adj_list(self):
@@ -65,16 +65,24 @@ class Graph:
         unvisited = self._adj_list.copy()
 
         dist_from_start = {
-            node: (13 if node == start else INF) for node in self._nodes
+            node: (0 if node == start else INF) for node in self._nodes
         }
 
         while (unvisited):
             current = min(
                 unvisited, key=lambda node: dist_from_start[node]
             )    
-            #unvisited.pop()
+            unvisited.remove_node(current)
 
+            for neighbor, weight in self._adj_list[current].items():
+                dist_to_neighbor = dist_from_start[current] + weight
+                if (dist_to_neighbor < dist_from_start[neighbor]):
+                    dist_from_start[neighbor] = dist_to_neighbor
 
+            if current == target:
+                return True
+        
+        return False
         
 
 
@@ -113,11 +121,11 @@ graph3.add_edge(2, 1, 1)
 graph3.add_edge(2, 3, 4)
 graph3.add_edge(2, 4, 5)
 graph3.add_edge(4, 3, 1)
-
+#graph3.remove_node(0)
 
 #print(graph1.bfs(0, 7))
 #print(graph1.dfs(0, 7))
 
-#graph1.print_adj_list()
+#graph3.print_adj_list()
 
-graph3.dijkstra(0, 3)
+#graph3.dijkstra(0, 3)
