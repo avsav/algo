@@ -56,8 +56,10 @@ class Graph:
     # Dijkstra
     def dijkstra(self, start, target):
         INF = 10**10
+
         # All nodes initially unvisited
-        unvisited = {}
+        unvisited = self._adj_list.copy()
+
         dist_from_start = {
             node: (0 if node == start else INF) for node in self._nodes
         }
@@ -99,7 +101,9 @@ graph3.add_edge(2, 4, 5)
 graph3.add_edge(4, 3, 1)
 
 
-print(graph1.bfs(0, 7))
-print(graph1.dfs(0, 7))
+#print(graph1.bfs(0, 7))
+#print(graph1.dfs(0, 7))
 
 #graph1.print_adj_list()
+
+graph3.dijkstra(0, 3)
