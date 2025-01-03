@@ -65,8 +65,15 @@ class Graph:
         unvisited = self._adj_list.copy()
 
         dist_from_start = {
-            node: (0 if node == start else INF) for node in self._nodes
+            node: (13 if node == start else INF) for node in self._nodes
         }
+
+        while (unvisited):
+            current = min(
+                unvisited, key=lambda node: dist_from_start[node]
+            )    
+            #unvisited.pop()
+
 
         
 

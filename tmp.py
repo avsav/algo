@@ -38,7 +38,7 @@ print(ans2)
 
 #d = {node: dict() for node in range(5)} 
 #print(d)
-
+'''
 di = {0: {1: 5, 2: 3},
       1: {3: 1, 4: 15},
       2: {5: 7, 8: 9},
@@ -46,3 +46,8 @@ di = {0: {1: 5, 2: 3},
 
 for i, c in di[1].items():
     print(i, c)
+'''
+
+x = [4, 11, 6, 31]
+m = min(x, key=lambda i: 2*i)
+print(m)
