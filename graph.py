@@ -60,7 +60,7 @@ class Graph:
     # Dijkstra
     def dijkstra(self, start, target):
         INF = 10**10
-        shortest_path = [start]
+        shortest_path = []
 
         # All nodes initially unvisited
         unvisited = self._adj_list.copy()
@@ -82,13 +82,12 @@ class Graph:
                 dist_to_neighbor = dist_from_start[current] + weight
                 if dist_to_neighbor < dist_from_start[neighbor]:
                     dist_from_start[neighbor] = dist_to_neighbor
-                if neighbor == target:
-                    shortest_path += neighbor
 
-        return dist_from_start, shortest_path
+            if current == target:
+                return shortest_path + [current], dist_from_start[current]
+            
+            shortest_path += [current]
 
-                #if neighbor == target:
-                #    return shortest_path + [neighbor]#, dist_from_start[neighbor]
         
         
 
@@ -131,4 +130,4 @@ graph3.add_edge(4, 3, 1)
 
 #graph3.print_adj_list()
 
-print(graph3.dijkstra(0, 3))
+print(graph3.dijkstra(0, 1))
