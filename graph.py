@@ -55,7 +55,13 @@ class Graph:
 
     # Dijkstra
     def dijkstra(self, start, target):
-        pass
+        INF = 10**10
+        # All nodes initially unvisited
+        unvisited = {}
+        dist_from_start = {
+            node: (0 if node == start else INF) for node in self._nodes
+        }
+
     
 
 
