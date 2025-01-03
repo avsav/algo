@@ -20,6 +20,10 @@ class Graph:
     def remove_edge(self, node1, node2, weight=1):
         self._adj_list[node1].pop(node2, weight)
 
+    # Removing node
+    def remove_node(self, node):
+        pass
+
     # Print adjacency list
     def print_adj_list(self):
         for key, value in self._adj_list.items():
@@ -63,6 +67,7 @@ class Graph:
         dist_from_start = {
             node: (0 if node == start else INF) for node in self._nodes
         }
+
 
     
 
