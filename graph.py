@@ -69,6 +69,9 @@ class Graph:
             node: (0 if node == start else INF) for node in self._nodes
         }
 
+        # Dictionary of previous nodes
+        prev = {node: None for node in self._nodes}
+
         while (unvisited):
             current = min(
                 unvisited, key=lambda node: dist_from_start[node]
@@ -82,11 +85,13 @@ class Graph:
                 dist_to_neighbor = dist_from_start[current] + weight
                 if dist_to_neighbor < dist_from_start[neighbor]:
                     dist_from_start[neighbor] = dist_to_neighbor
+                    prev[neighbor] = current
 
-            if current == target:
-                return shortest_path + [current], dist_from_start[current]
+            #if current == target:
+            #    return shortest_path + [current], dist_from_start[target]
             
-            shortest_path += [current]
+            #shortest_path += [current]
+        return prev #dist_from_start
 
         
         
@@ -130,4 +135,4 @@ graph3.add_edge(4, 3, 1)
 
 #graph3.print_adj_list()
 
-print(graph3.dijkstra(0, 1))
+print(graph3.dijkstra(0, 3))
