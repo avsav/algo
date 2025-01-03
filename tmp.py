@@ -49,5 +49,5 @@ for i, c in di[1].items():
 '''
 
 x = [4, 11, 6, 31]
-m = min(x, key=lambda i: 2*i)
+m = min(x, key=lambda i: 1/i)
 print(m)
