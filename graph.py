@@ -34,11 +34,11 @@ class Graph:
         dist = 0
         queue = [(start, [start], dist)]
 
-        while (queue):
+        while queue:
             (node, path, dist) = queue.pop(0)
             for neighbor, weight in self._adj_list[node].items():   
                 if neighbor not in path:
-                    if (neighbor == target):
+                    if neighbor == target:
                         return path + [neighbor], dist + weight
                     else:
                         queue.append((neighbor, path + [neighbor], dist + weight))    
@@ -48,11 +48,11 @@ class Graph:
         dist = 0
         stack = [(start, [start], dist)]
 
-        while (stack):
+        while stack:
             (node, path, dist) = stack.pop()
             for neighbor, weight in self._adj_list[node].items():   
                 if neighbor not in path:
-                    if (neighbor == target):
+                    if neighbor == target:
                         return path + [neighbor], dist + weight
                     else:
                         stack.append((neighbor, path + [neighbor], dist + weight))    
@@ -80,10 +80,12 @@ class Graph:
 
             for neighbor, weight in self._adj_list[current].items():
                 dist_to_neighbor = dist_from_start[current] + weight
-                if (dist_to_neighbor < dist_from_start[neighbor]):
+                if dist_to_neighbor < dist_from_start[neighbor]:
                     dist_from_start[neighbor] = dist_to_neighbor
+                if neighbor == target:
+                    shortest_path += neighbor
 
-        return dist_from_start
+        return dist_from_start, shortest_path
 
                 #if neighbor == target:
                 #    return shortest_path + [neighbor]#, dist_from_start[neighbor]
