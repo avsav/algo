@@ -60,6 +60,7 @@ class Graph:
     # Dijkstra
     def dijkstra(self, start, target):
         INF = 10**10
+        shortest_path = [start]
 
         # All nodes initially unvisited
         unvisited = self._adj_list.copy()
@@ -72,17 +73,17 @@ class Graph:
             current = min(
                 unvisited, key=lambda node: dist_from_start[node]
             )    
-            unvisited.remove_node(current)
+            unvisited.pop(current)
 
             for neighbor, weight in self._adj_list[current].items():
                 dist_to_neighbor = dist_from_start[current] + weight
                 if (dist_to_neighbor < dist_from_start[neighbor]):
                     dist_from_start[neighbor] = dist_to_neighbor
+                    shortest_path += [neighbor]
 
-            if current == target:
-                return True
+                if current == target:
+                    return shortest_path, dist_from_start[current]
         
-        return False
         
 
 
@@ -128,4 +129,4 @@ graph3.add_edge(4, 3, 1)
 
 #graph3.print_adj_list()
 
-#graph3.dijkstra(0, 3)
+graph3.dijkstra(0, 3)
