@@ -54,7 +54,7 @@ class Graph:
                         stack.append((neighbor, path + [neighbor], dist + weight))    
 
     # Dijkstra
-    def dijkstra(self, start):
+    def dijkstra(self, start, target):
         pass
     
 
@@ -79,6 +79,18 @@ graph2.add_edge(1, 3, 1)
 graph2.add_edge(1, 4, 15)
 graph2.add_edge(3, 4, 11)
 graph2.add_edge(4, 2, 7)
+
+# For Dijkstra
+graph3 = Graph(5)
+graph3.add_edge(0, 1, 4)
+graph3.add_edge(0, 2, 2)
+graph3.add_edge(1, 2, 3)
+graph3.add_edge(1, 3, 2)
+graph3.add_edge(1, 4, 3)
+graph3.add_edge(2, 1, 1)
+graph3.add_edge(2, 3, 4)
+graph3.add_edge(2, 4, 5)
+graph3.add_edge(4, 3, 1)
 
 
 print(graph1.bfs(0, 7))
