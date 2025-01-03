@@ -75,14 +75,18 @@ class Graph:
             )    
             unvisited.pop(current)
 
+            if dist_from_start[current] == INF:
+                break
+
             for neighbor, weight in self._adj_list[current].items():
                 dist_to_neighbor = dist_from_start[current] + weight
                 if (dist_to_neighbor < dist_from_start[neighbor]):
                     dist_from_start[neighbor] = dist_to_neighbor
-                    shortest_path += [neighbor]
 
-                if current == target:
-                    return shortest_path, dist_from_start[current]
+        return dist_from_start
+
+                #if neighbor == target:
+                #    return shortest_path + [neighbor]#, dist_from_start[neighbor]
         
         
 
@@ -125,4 +129,4 @@ graph3.add_edge(4, 3, 1)
 
 #graph3.print_adj_list()
 
-graph3.dijkstra(0, 3)
+print(graph3.dijkstra(0, 3))
