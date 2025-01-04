@@ -38,6 +38,7 @@ def mergesort(arr):
         return arr
     return merge(mergesort(arr[:m]), mergesort(arr[m:]))
 
+
 #### Binary search ####
 def binary_search(nums, target):
     low = 0
