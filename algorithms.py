@@ -28,7 +28,7 @@ def quicksort(arr, p, r):
 def binary_search(nums, target):
     low = 0
     high = len(nums) - 1
-    while (low <= high):
+    while low <= high:
         mi = (low + high) // 2
         if (nums[mi] > target):
             high = mi - 1
