@@ -32,8 +32,11 @@ def merge(a, b):
             c.append(b.pop(0))
     return c
 
-def mergesort():
-    pass
+def mergesort(arr):
+    m = len(arr) // 2
+    if m == 0:
+        return arr
+    return merge(mergesort(arr[:m]), mergesort(arr[m:]))
 
 #### Binary search ####
 def binary_search(nums, target):
@@ -50,15 +53,22 @@ def binary_search(nums, target):
     return -1
  
 
-'''
+
 arr0 = [2, 8, 7, 1, 3, 5, 6, 4]
 arr1 = [1, 2, 7, 3, 4, 0, -1, 3, 8, 10, 12, 1, 6, 4, -10, 20]
 arr2 = [1, 1, 1, 1, 1]
 arr3 = [5, 4, 3, 2, 1, 0]
+arr4 = [3]
 #partition(arr0, 0, len(arr0) - 1)
 quicksort(arr0, 0, len(arr0) - 1)
 print(arr0)
-'''
+print(mergesort(arr0))
+
 
 #nums = [2, 8, 9, 10, 13, 14]
 #print(binary_search(nums, 12))
+
+#a = [1, 5, 7]
+#b = [2, 4]
+#print(merge(a, b))
+#print(a[2:])
