@@ -21,7 +21,7 @@ class Solution:
 
     def print_ll(self):
         curr = self.h
-        while curr:
+        while curr is not None:
             print(curr.val)
             curr = curr.next
 
@@ -30,15 +30,10 @@ class Solution:
 
  
 
-
-
-
-
-
-
-
 head = [3, 2, 0, -4]
 pos = 1
 obj = Solution()
-
+obj.add_node_to_end(3)
+#obj.add_node_to_end(2)
+obj.print_ll()
 #obj.hasCycle(head)
