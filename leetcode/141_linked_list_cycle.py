@@ -10,20 +10,25 @@ class Solution:
     def __init__(self):
         self.h = None
 
+    def add_node_to_end(self, value):
+        node = ListNode(value)
+        if self.h is None:
+            self.h = node       
+        curr = self.h
+        while curr.next:
+            curr = curr.next
+        curr.next = node
+
+    def printLL(self):
+        curr = self.h
+        while curr:
+            print(curr.val)
+            curr = curr.next
 
     def hasCycle(self, head):
-        for x in head:
-            node = ListNode(x)
-            if self.h is None:
-                self.h = node
+        pass
 
-            curr = self.h
-            while curr.next:
-                curr = curr.next
-            curr.next = node
  
-            if (curr.val < 0):
-                return curr.val
 
 
 
@@ -35,4 +40,5 @@ class Solution:
 head = [3, 2, 0, -4]
 pos = 1
 obj = Solution()
-print(obj.hasCycle(head))
+
+#obj.hasCycle(head)
