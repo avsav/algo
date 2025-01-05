@@ -6,34 +6,60 @@ class ListNode:
         self.val = x
         self.next = None
 
-class Solution:
+class LinkedList:
     def __init__(self):
         self.h = None
 
     def add_node_to_end(self, value):
         node = ListNode(value)
         if self.h is None:
-            self.h = node       
+            self.h = node
+        else:      
+            curr = self.h
+            while curr.next:
+                curr = curr.next
+            curr.next = node
+
+    def return_node_at_end(self):
+        if self.h is None:
+            return     
         curr = self.h
         while curr.next:
             curr = curr.next
-        curr.next = node
+        return curr
+
+    def return_node_at_pos(self, pos):
+        curr = self.h
+        n = 0
+        while curr.next and n != pos:
+            n += 1
+            curr = curr.next
+        print(curr.val)
+
+    def create_cycled_list(self, head, pos):
+        n = len(head)
+        #if pos == 0:
+
+        for i in range(n):
+            self.add_node_to_end(head[i])
+        
+        #node = ListNode(head[n - 1])
+        #node.next = 
+
 
     def print_ll(self):
         curr = self.h
-        while curr is not None:
+        while curr:
             print(curr.val)
             curr = curr.next
-
-    def hasCycle(self, head):
-        pass
-
  
 
 head = [3, 2, 0, -4]
 pos = 1
-obj = Solution()
-obj.add_node_to_end(3)
-#obj.add_node_to_end(2)
-obj.print_ll()
-#obj.hasCycle(head)
+ll = LinkedList()
+ll.create_cycled_list(head, 0)
+#ll.hasCycle(head)
+#ll.return_node_at_end()
+ll.return_node_at_pos(2)
+#ll.print_ll()
+
