@@ -19,7 +19,7 @@ class Solution:
             curr = curr.next
         curr.next = node
 
-    def printLL(self):
+    def print_ll(self):
         curr = self.h
         while curr:
             print(curr.val)
