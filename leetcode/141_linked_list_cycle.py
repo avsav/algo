@@ -49,12 +49,18 @@ class LinkedList:
 
         node_at_end.next = node_at_pos
 
-
     def print_ll(self):
         curr = self.h
         while curr:
             print(curr.val)
             curr = curr.next
+
+    def print_cycled_ll(self):
+        slow = fast = self.h
+        fast = fast.next
+        while fast:
+            #print(curr.val)
+            fast = fast.next
  
 
 head = [3, 2, 0, -4]
@@ -63,6 +69,6 @@ ll = LinkedList()
 ll.create_cycled_list(head, 0)
 #ll.hasCycle(head)
 #ll.return_node_at_end()
-ll.return_node_at_pos(0)
-#ll.print_ll()
+#ll.return_node_at_pos(0)
+ll.print_ll()
 
