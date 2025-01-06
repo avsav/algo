@@ -38,7 +38,13 @@ class LinkedList:
             curr = curr.next
         return curr
 
-    def create_cycled_list(self, head, pos):
+    def create_no_cycled_ll(self, head):
+        n = len(head)
+
+        for i in range(n):
+            self.add_node_to_end(head[i])
+
+    def create_cycled_ll(self, head, pos):
         n = len(head)
 
         for i in range(n):
@@ -49,22 +55,16 @@ class LinkedList:
 
         node_at_end.next = node_at_pos
 
-        #return node_at_pos.val, node_at_end.val
-
     def print_ll(self):
         curr = self.h
         while curr:
             print(curr.val)
             curr = curr.next
 
-    def print_cycled_ll(self):
-        slow = fast = self.h
-        while fast and fast.next:
-            slow = slow.next
-            fast = fast.next.next
-            if slow == fast:
-                return fast.val
-        return -1
+    def print_cycled_ll(self, pos):
+        self.print_ll()
+        node_at_pos = self.return_node_at_pos(pos)
+        print(node_at_pos.val)
 
     def hasCycle(self):
         slow = fast = self.h
@@ -73,16 +73,25 @@ class LinkedList:
             fast = fast.next.next
             if slow == fast:
                 return True
-        return False        
+        return False 
+
+"""   
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        slow = fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
+                return True
+        return False   
+"""     
  
 
 head = [3, 2, 0, -4]
+pos = 1
 ll = LinkedList()
-ll.create_cycled_list(head, 1)
-#print( ll.create_cycled_list(head, 1) )
-print(ll.print_cycled_ll())
-#ll.hasCycle(head)
-#ll.return_node_at_end()
-#ll.return_node_at_pos(0)
-#ll.print_ll()
+ll.create_no_cycled_ll(head)
+ll.print_cycled_ll(pos)
+print(ll.hasCycle())
 
