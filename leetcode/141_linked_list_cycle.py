@@ -22,7 +22,7 @@ class LinkedList:
 
     def return_node_at_end(self):
         if self.h is None:
-            return     
+            return
         curr = self.h
         while curr.next:
             curr = curr.next
