@@ -55,16 +55,21 @@ class LinkedList:
 
         node_at_end.next = node_at_pos
 
-    def print_ll(self):
+    def print_no_cycled_ll(self):
         curr = self.h
         while curr:
             print(curr.val)
             curr = curr.next
 
     def print_cycled_ll(self, pos):
-        self.print_ll()
+        #self.print_no_cycled_ll()
         node_at_pos = self.return_node_at_pos(pos)
-        print(node_at_pos.val)
+        #print(node_at_pos.val)
+        curr = self.h
+        while curr != node_at_pos:
+            print(curr.val)
+            curr = curr.next
+        
 
     def hasCycle(self):
         slow = fast = self.h
@@ -93,5 +98,5 @@ pos = 1
 ll = LinkedList()
 ll.create_no_cycled_ll(head)
 ll.print_cycled_ll(pos)
-print(ll.hasCycle())
+#print(ll.hasCycle())
 
