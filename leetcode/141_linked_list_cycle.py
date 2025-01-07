@@ -62,13 +62,16 @@ class LinkedList:
             curr = curr.next
 
     def print_cycled_ll(self, pos):
-        #self.print_no_cycled_ll()
         node_at_pos = self.return_node_at_pos(pos)
-        #print(node_at_pos.val)
         curr = self.h
-        while curr != node_at_pos:
+        while curr:
+            if (curr == node_at_pos):
+                print(node_at_pos.val)
+                curr = curr.next
+                continue
             print(curr.val)
             curr = curr.next
+        print(node_at_pos.val)
         
 
     def hasCycle(self):
