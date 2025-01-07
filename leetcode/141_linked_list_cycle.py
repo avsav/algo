@@ -64,14 +64,19 @@ class LinkedList:
     def print_cycled_ll(self, pos):
         node_at_pos = self.return_node_at_pos(pos)
         curr = self.h
-        while curr:
-            if (curr == node_at_pos):
-                print(node_at_pos.val)
-                curr = curr.next
-                continue
+        flag = 1
+        while curr and flag:
+            if curr == node_at_pos:
+                flag = 0
             print(curr.val)
             curr = curr.next
+
+        while curr != node_at_pos:
+            print(curr.val)
+            curr = curr.next
+
         print(node_at_pos.val)
+
         
 
     def hasCycle(self):
@@ -99,7 +104,7 @@ class Solution:
 head = [3, 2, 0, -4]
 pos = 1
 ll = LinkedList()
-ll.create_no_cycled_ll(head)
+ll.create_cycled_ll(head, pos)
 ll.print_cycled_ll(pos)
 #print(ll.hasCycle())
 
