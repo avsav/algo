@@ -84,6 +84,10 @@ class LinkedList:
             slow = slow.next
             fast = fast.next.next
         return slow.val
+    
+    def reverse_list(self, head):
+        pass
+    
 """   
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
