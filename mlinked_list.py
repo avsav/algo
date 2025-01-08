@@ -98,10 +98,19 @@ class LinkedList:
         #n = len(h)
         #for i in range(n):
         #    self.add_node_at_begin(h[i])
-        
+        prev = None
+        curr = self.head
+        while curr:
+            node = curr.next
+            curr.next = prev
+            prev = curr
+            curr = node
+        self.head = prev
+
     
 
-h = [3, 2, 0, -4, 7, 12, 15, 9]
+#h = [3, 2, 0, -4, 7, 12, 15, 9]
+h = [1, 2]
 #pos = 1
 ll = LinkedList()
 ll.create_no_cycled_ll(h)
