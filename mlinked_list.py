@@ -87,11 +87,11 @@ class LinkedList:
         pass
     
 
-#h = [3, 2, 0, -4, 7, 12, 15, 9]
+h = [3, 2, 0, -4, 7, 12, 15, 9]
 #pos = 1
-#ll = LinkedList()
-#ll.create_no_cycled_ll(h)
+ll = LinkedList()
+ll.create_no_cycled_ll(h)
 #ll.create_cycled_ll(h, pos)
 #ll.print_cycled_ll(pos)
-#ll.print_no_cycled_ll()
+ll.print_no_cycled_ll()
 #print(ll.has_cycle())
