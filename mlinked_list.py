@@ -8,8 +8,17 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def add_node_to_end(self, value):
-        node = ListNode(value)
+    def add_node_at_begin(self, x):
+        node = ListNode(x)
+        if self.head is None:
+            self.head = node
+            return
+        else:
+            node.next = self.head
+            self.head = node
+
+    def add_node_at_end(self, x):
+        node = ListNode(x)
         if self.head is None:
             self.head = node
         else:      
@@ -21,7 +30,7 @@ class LinkedList:
     def return_node_at_end(self):
         if self.head is None:
             return
-        curr = self.head
+        curr = self.head 
         while curr.next:
             curr = curr.next
         return curr
@@ -39,12 +48,12 @@ class LinkedList:
     def create_no_cycled_ll(self, h):
         n = len(h)
         for i in range(n):
-            self.add_node_to_end(h[i])
+            self.add_node_at_end(h[i])
 
     def create_cycled_ll(self, h, pos):
         n = len(h)
         for i in range(n):
-            self.add_node_to_end(h[i])   
+            self.add_node_at_end(h[i])   
         node_at_pos = self.return_node_at_pos(pos)
         node_at_end = self.return_node_at_end()
         node_at_end.next = node_at_pos
@@ -83,14 +92,20 @@ class LinkedList:
             fast = fast.next.next
         return slow.value
     
-    def reverse_list(self, head):
-        pass
+    def reverse_list(self, h):
+        if self.head == None:
+            return self.head
+        #n = len(h)
+        #for i in range(n):
+        #    self.add_node_at_begin(h[i])
+        
     
 
 h = [3, 2, 0, -4, 7, 12, 15, 9]
 #pos = 1
 ll = LinkedList()
 ll.create_no_cycled_ll(h)
+ll.reverse_list(h)
 #ll.create_cycled_ll(h, pos)
 #ll.print_cycled_ll(pos)
 ll.print_no_cycled_ll()
