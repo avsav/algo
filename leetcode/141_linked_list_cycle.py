@@ -40,19 +40,15 @@ class LinkedList:
 
     def create_no_cycled_ll(self, head):
         n = len(head)
-
         for i in range(n):
             self.add_node_to_end(head[i])
 
     def create_cycled_ll(self, head, pos):
         n = len(head)
-
         for i in range(n):
-            self.add_node_to_end(head[i])
-        
+            self.add_node_to_end(head[i])   
         node_at_pos = self.return_node_at_pos(pos)
         node_at_end = self.return_node_at_end()
-
         node_at_end.next = node_at_pos
 
     def print_no_cycled_ll(self):
@@ -82,6 +78,10 @@ class LinkedList:
                 return True
         return False 
 
+    def middle_node(self):
+        slow = fast = self.h
+
+
 """   
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
@@ -98,7 +98,9 @@ class Solution:
 head = [3, 2, 0, -4]
 pos = 1
 ll = LinkedList()
-ll.create_cycled_ll(head, pos)
-ll.print_cycled_ll(pos)
+ll.create_no_cycled_ll(head)
+#ll.create_cycled_ll(head, pos)
+#ll.print_cycled_ll(pos)
+ll.print_no_cycled_ll()
 #print(ll.has_cycle())
 
