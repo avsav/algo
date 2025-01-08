@@ -1,8 +1,5 @@
 # https://leetcode.com/problems/reverse-linked-list/description/
 
-import sys
-sys.path.append("C:\\Users\\Boris\\Desktop\\algo")
-
 from mlinked_list import *
 
 h = [3, 2, 0, -4, 7, 12, 15, 9]
