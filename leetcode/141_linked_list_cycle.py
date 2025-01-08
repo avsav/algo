@@ -80,8 +80,10 @@ class LinkedList:
 
     def middle_node(self):
         slow = fast = self.h
-
-
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow.val
 """   
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
@@ -95,12 +97,13 @@ class Solution:
 """     
  
 
-head = [3, 2, 0, -4]
+head = [3, 2, 0, -4, 7, 12, 15, 9]
 pos = 1
 ll = LinkedList()
 ll.create_no_cycled_ll(head)
 #ll.create_cycled_ll(head, pos)
 #ll.print_cycled_ll(pos)
-ll.print_no_cycled_ll()
+#ll.print_no_cycled_ll()
 #print(ll.has_cycle())
+print(ll.middle_node())
 
