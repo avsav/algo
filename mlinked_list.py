@@ -83,6 +83,9 @@ class LinkedList:
             fast = fast.next.next
         return slow.value
     
+    def reverse_list(self, head):
+        pass
+    
 
 #h = [3, 2, 0, -4, 7, 12, 15, 9]
 #pos = 1
