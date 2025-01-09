@@ -93,15 +93,17 @@ class LinkedList:
         return slow.value
     
     def reverse_list(self, h):
-        if self.head == None:
-            return self.head
-        #n = len(h)
-        #for i in range(n):
-        #    self.add_node_at_begin(h[i])
-
+        prev = None
         curr = self.head
         while curr:
-            pass
+            next_node = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next_node
+        self.head = prev
+
+    def is_palindrome(self, h):
+        pass    
 
     
 
