@@ -92,7 +92,7 @@ class LinkedList:
             fast = fast.next.next
         return slow.value
     
-    def reverse_list(self, h):
+    def reverse_list(self):
         prev = None
         curr = self.head
         while curr:
@@ -102,18 +102,42 @@ class LinkedList:
             curr = next_node
         self.head = prev
 
-    def is_palindrome(self, h):
-        pass    
+    def is_palindrome(self):
+        slow = fast = self.head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        prev = None
+        curr = slow
+        while curr:
+            next_node = curr.next
+            curr.next = prev 
+            prev = curr
+            curr = next_node
+
+        first = self.head
+        second = prev
+        while second:
+            if first.value != second.value:
+                return False
+            first = first.next
+            second = second.next
+        return True
+
+
 
     
 
-#h = [3, 2, 0, -4, 7, 12, 15, 9]
-h = [1, 2]
-#pos = 1
+h1 = [3, 2, 0, -4, 7, 12, 15, 9]
+h2 = [1, 2]
+h3 = [1, 2, 2, 1]
+pos = 1
 ll = LinkedList()
-ll.create_no_cycled_ll(h)
-ll.reverse_list(h)
+ll.create_no_cycled_ll(h3)
+ll.reverse_list()
+print(ll.is_palindrome())
 #ll.create_cycled_ll(h, pos)
 #ll.print_cycled_ll(pos)
-ll.print_no_cycled_ll()
+#ll.print_no_cycled_ll()
 #print(ll.has_cycle())
