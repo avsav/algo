@@ -148,7 +148,7 @@ class LinkedList:
             curr = curr.next
 
 
-    
+
 
 h1 = [3, 2, 0, -4, 7, 12, 15, 9]
 h2 = [1, 2]
@@ -163,7 +163,7 @@ ll.create_no_cycled_ll(h5)
 #ll.reverse_list()
 #print(ll.is_palindrome())
 #ll.remove_elements(6)
-ll.delete_duplicates()
+#ll.delete_duplicates()
 #ll.print_cycled_ll(pos)
 ll.print_no_cycled_ll()
 
