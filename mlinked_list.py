@@ -145,7 +145,7 @@ class LinkedList:
 h1 = [3, 2, 0, -4, 7, 12, 15, 9]
 h2 = [1, 2]
 h3 = [1, 2, 2, 1]
-h4 = [1,2,6,3,4,5,6]
+h4 = [1, 2, 6, 3, 4, 5, 6]
 pos = 1
 ll = LinkedList()
 ll.create_no_cycled_ll(h4)
@@ -153,7 +153,7 @@ ll.create_no_cycled_ll(h4)
 #print(ll.has_cycle())
 #ll.reverse_list()
 #print(ll.is_palindrome())
-ll.remove_elements(6)
+#ll.remove_elements(6)
 #ll.print_cycled_ll(pos)
 ll.print_no_cycled_ll()
 
