@@ -138,6 +138,14 @@ class LinkedList:
             curr.next = next_node
             curr = curr.next
 
+    def delete_duplicates(self):
+        curr = self.head
+        while curr:
+            next_node = curr.next
+            while next_node and curr.value == next_node.value:
+                next_node = next_node.next
+            curr.next = next_node
+            curr = curr.next
 
 
     
@@ -146,14 +154,16 @@ h1 = [3, 2, 0, -4, 7, 12, 15, 9]
 h2 = [1, 2]
 h3 = [1, 2, 2, 1]
 h4 = [1, 2, 6, 3, 4, 5, 6]
+h5 = [1, 1, 2, 3, 3]
 pos = 1
 ll = LinkedList()
-ll.create_no_cycled_ll(h4)
+ll.create_no_cycled_ll(h5)
 #ll.create_cycled_ll(h, pos)
 #print(ll.has_cycle())
 #ll.reverse_list()
 #print(ll.is_palindrome())
 #ll.remove_elements(6)
+ll.delete_duplicates()
 #ll.print_cycled_ll(pos)
 ll.print_no_cycled_ll()
 
