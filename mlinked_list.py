@@ -124,6 +124,16 @@ class LinkedList:
             first = first.next
             second = second.next
         return True
+    
+    def remove_elements(self, val):
+        curr = self.head
+        if curr.value == val:
+            self.head = curr.next
+        while curr:
+            next_node = curr.next
+            if next_node.value == val:
+                curr.next = curr.next.next
+            curr = curr.next
 
 
 
@@ -132,12 +142,15 @@ class LinkedList:
 h1 = [3, 2, 0, -4, 7, 12, 15, 9]
 h2 = [1, 2]
 h3 = [1, 2, 2, 1]
+h4 = [1, 2, 3]
 pos = 1
 ll = LinkedList()
-ll.create_no_cycled_ll(h3)
-ll.reverse_list()
-print(ll.is_palindrome())
+ll.create_no_cycled_ll(h4)
 #ll.create_cycled_ll(h, pos)
-#ll.print_cycled_ll(pos)
-#ll.print_no_cycled_ll()
 #print(ll.has_cycle())
+#ll.reverse_list()
+#print(ll.is_palindrome())
+ll.remove_elements(2)
+#ll.print_cycled_ll(pos)
+ll.print_no_cycled_ll()
+
