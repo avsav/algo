@@ -71,7 +71,7 @@ class Graph:
         # Dictionary of previous nodes
         prev = {node: None for node in self._nodes}
 
-        while (unvisited):
+        while unvisited:
             current = min(
                 unvisited, key=lambda node: dist_from_start[node]
             )    
