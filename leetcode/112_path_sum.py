@@ -1,5 +1,5 @@
 # https://leetcode.com/problems/path-sum/
-
+""" 
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -22,4 +22,5 @@ class Solution:
                 stack.append((node.left, sum + node.left.val))
             if node.right: 
                 stack.append((node.right, sum + node.right.val))
-        return False
+        return False 
+"""
