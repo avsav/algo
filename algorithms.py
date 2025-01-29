@@ -45,9 +45,9 @@ def binary_search(nums, target):
     high = len(nums) - 1
     while low <= high:
         mi = (low + high) // 2
-        if (nums[mi] > target):
+        if nums[mi] > target:
             high = mi - 1
-        elif (nums[mi] < target):
+        elif nums[mi] < target:
             low = mi + 1            
         else:
             return mi     
