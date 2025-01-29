@@ -20,6 +20,5 @@ class Solution:
             return True
         if not p and q or p and not q or p.val != q.val:
             return False
-        return self.isMirror(p.left, q.right) and self.isMirror(p.right, q.left)
-        
+        return self.isMirror(p.left, q.right) and self.isMirror(p.right, q.left)        
 """
