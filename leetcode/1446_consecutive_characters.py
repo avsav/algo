@@ -11,8 +11,6 @@ def maxPower(s):
             maks = max(maks, cnt)
         else:
             cnt = 1
-    if maks == 0:
-        return 1
     return maks
     
 
