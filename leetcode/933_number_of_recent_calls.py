@@ -22,6 +22,7 @@ class RecentCounter:
         return cnt
         """
         """
+        # Not accepted
         n = len(li)
         for l in li:
             if l < t - 3000:
