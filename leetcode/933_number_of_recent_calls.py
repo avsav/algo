@@ -12,8 +12,8 @@ class RecentCounter:
         for l in li:
             if l < t - 3000:
                 n -= 1
-            else:
-                return n
+
+        return n
         
 
 
