@@ -8,12 +8,9 @@ class RecentCounter:
     def ping(self, t: int) -> int:
         self.requests.append(t)
         li = self.requests
-        n = len(li)
-        for l in li:
-            if l < t - 3000:
-                n -= 1
-
-        return n
+        while li[0] < t - 3000:
+            li.pop(0)
+        return len(li)
         
 
 
