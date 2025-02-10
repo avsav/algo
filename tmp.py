@@ -51,3 +51,15 @@ for i, c in di[1].items():
 x = [4, 11, 6, 31]
 m = min(x, key=lambda i: 1/i)
 print(m)
+
+def summaryRanges(nums):
+    ranges = []
+    for num in nums:
+        if ranges and ranges[-1][1] == num - 1:
+            ranges[-1][1] = num
+        else:
+            ranges.append([num, num])
+    return ranges
+
+nums = [0, 2, 3, 4, 6, 7, 9]
+print(summaryRanges(nums))
