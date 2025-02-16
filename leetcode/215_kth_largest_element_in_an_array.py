@@ -19,7 +19,6 @@ def rand_partition(nums, a, b):
     nums[left + 1], nums[b] = nums[b], nums[left + 1]
     return left + 1
 
-
 def qsort(nums, a, b):
     if a < b:
         pivot = rand_partition(nums, a, b)
