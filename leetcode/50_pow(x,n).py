@@ -13,5 +13,5 @@ def myPow(x, n):
     return res
 
 x = 5
-n = -3
+n = -4
 print(myPow(x, n))
