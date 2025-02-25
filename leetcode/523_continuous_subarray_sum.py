@@ -23,4 +23,6 @@ nums1 = [23,2,4,6,7]
 nums2 = [23,2,6,4,7]
 k2 = 13
 nums3 = [23,2,6,4,7]
-print(checkSubarraySum(nums1, k1))
+k3 = 7
+nums4 = [23,2,4,6,6]
+print(checkSubarraySum(nums4, k3))
