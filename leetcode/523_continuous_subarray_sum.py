@@ -5,12 +5,16 @@ def checkSubarraySum(nums, k):
     left = 0
     prefix = 0
     for right in range(n):
-        if nums[right] >= k:
-            left += 1
-        else:
+        if nums[right] > k:
+            left = right + 1
+        if nums[right] <= k:
             prefix += nums[right]
-            while prefix > k:
+            while prefix > k and right - left + 1 >= 2:
                 prefix -= nums[left]
+                left += 1
+                if prefix == k:
+                    return True
+    return False
 
 
 
@@ -19,3 +23,4 @@ nums1 = [23,2,4,6,7]
 nums2 = [23,2,6,4,7]
 k2 = 13
 nums3 = [23,2,6,4,7]
+print(checkSubarraySum(nums1, k1))
