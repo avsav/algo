@@ -2,16 +2,19 @@
 
 def numOfSubarrays(arr):
     mod = 10**9 + 7
-    prefix = odd = even = ns = 0
+    prefix = ns = 0
+    odd = 0 
+    even = 1
     for num in arr:
         prefix += num
         if prefix % 2:
             odd += 1
-            ns += even + 1
+            ns += even
         else:
             even += 1
             ns += odd
     return ns % mod
+
 
 arr = [2,4,6]
 print(numOfSubarrays(arr))
