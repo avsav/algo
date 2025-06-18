@@ -1,6 +1,7 @@
 # https://leetcode.com/problems/can-place-flowers/description/
 
 def canPlaceFlowers(flowerbed, n):
+    # Stupid solution
     if n == 0:
         return True
     k = len(flowerbed)
