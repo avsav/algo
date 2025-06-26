@@ -1,41 +1,25 @@
 # https://leetcode.com/problems/3sum/
 
 def threeSum(nums):
+    nums.sort()
     n = len(nums)
-    indexes = []
     res = []
     for i in range(n):
-       two_ind = twoSum(nums, -nums[i])
-       for ind in two_ind:
-            if i not in ind:
-                ind.append(i)
-                if ind not in indexes:
-                    indexes.append(ind)
-
-    for ind in indexes:
-        triplet = []
-        for i in ind:
-            triplet.append(nums[i])
-            triplet.sort()
-        if triplet not in res:
-            res.append(triplet)    
+        j = i + 1
+        k = n - 1
+        while j < k:
+            total = nums[j] + nums[k]
+            if total == -nums[i]:
+                triplet = [nums[i], nums[j], nums[k]]
+                if triplet not in res:
+                    res.append(triplet)
+                j += 1
+                k -= 1
+            elif total < -nums[i]:
+                j += 1
+            else:
+                k -= 1
     return res
-
-
-def twoSum(nums, target):
-    n = len(nums)
-    s = set()
-    result = []
-    for i in range(n):         
-        complement = target - nums[i]
-        if complement in nums:
-            j = nums.index(complement)
-        if complement in s:
-            result.append([j, i])
-        s.add(nums[i])
-    return result
-
-
 
 
 
@@ -44,5 +28,5 @@ nums2 = [-1,0,1,2,-1,-4]
 nums3 = [0,1,1]
 nums4 = [0,0,0]
 nums5 = [-2,0,1,1,2]
-print(threeSum(nums5))
-#print(twoSum(nums2, 0))
+nums6 = [0,0,0,0]
+print(threeSum(nums2))
