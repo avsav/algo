@@ -25,15 +25,15 @@ def threeSum(nums):
 def twoSum(nums, target):
     n = len(nums)
     s = set()
-    res = []
+    result = []
     for i in range(n):         
         complement = target - nums[i]
         if complement in nums:
             j = nums.index(complement)
         if complement in s:
-            res.append([j, i])
+            result.append([j, i])
         s.add(nums[i])
-    return res
+    return result
 
 
 
