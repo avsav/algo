@@ -9,7 +9,6 @@ def threeSum(nums):
        for ind in two_ind:
             if i not in ind:
                 ind.append(i)
-                ind.sort()
                 if ind not in indexes:
                     indexes.append(ind)
 
@@ -44,5 +43,6 @@ nums1 = [1,-1,3,5]
 nums2 = [-1,0,1,2,-1,-4]
 nums3 = [0,1,1]
 nums4 = [0,0,0]
-print(threeSum(nums4))
+nums5 = [-2,0,1,1,2]
+print(threeSum(nums5))
 #print(twoSum(nums2, 0))
