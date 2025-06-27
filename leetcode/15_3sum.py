@@ -3,22 +3,26 @@
 def threeSum(nums):
     nums.sort()
     n = len(nums)
-    res = []
+    s = set()
     for i in range(n):
         j = i + 1
         k = n - 1
         while j < k:
             total = nums[j] + nums[k]
             if total == -nums[i]:
-                triplet = [nums[i], nums[j], nums[k]]
-                if triplet not in res:
-                    res.append(triplet)
+                triplet = (nums[i], nums[j], nums[k])
+                # if triplet not in res:
+                s.add(triplet)
                 j += 1
                 k -= 1
             elif total < -nums[i]:
                 j += 1
             else:
                 k -= 1
+
+    res = []
+    for triplet in s:
+        res.append(list(triplet))
     return res
 
 
