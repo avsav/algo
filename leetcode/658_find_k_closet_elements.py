@@ -2,45 +2,15 @@
 
 def findClosestElements(arr, k, x):
     n = len(arr)
-    #res = []
-    minMod = 10**10
-    for i in range(n):
-        d = abs(x - arr[i])
-        minMod = min(minMod, d)
+    left = 0
+    right = n - 1
+    while right - left >= k:
+        if abs(arr[left] - x) <= abs(arr[right] - x):
+            right -= 1
+        else:
+            left += 1
 
-    for i in range(n):
-        if abs(x - arr[i]) == minMod:
-            ind = i
-            break
-
-
-    if ind - k + 1 <= 0:
-        left = 0
-        right = k - 1
-    else:
-        left = ind - k + 1
-        right = ind
-    
-
-    minSum = 10**10
-    sumMod = 0
-    i = 0
-    while right + i < n:
-        sumMod = sum(abs(x - arr[k]) for k in range(left + i, right + i + 1))
-        minSum = min(minSum, sumMod)
-        i += 1
-
-    a = b = 0
-    j = 0
-    while right + j < n:
-        sumMod = sum(abs(x - arr[k]) for k in range(left + j, right + j + 1))
-        if sumMod == minSum:
-            a = left + j
-            b = right + j + 1
-            break
-        j += 1
-
-    return arr[a:b]
+    return arr[left:left+k]
 
 
 
@@ -60,4 +30,4 @@ x4 = 1
 arr5 = [0,0,0,1,3,5,6,7,8,8]
 k5 = 2
 x5 = 2
-print(findClosestElements(arr5, k5, x5))
+print(findClosestElements(arr1, k1, x1))
