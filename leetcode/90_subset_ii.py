@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/subsets-ii
 
-def subsets(nums):
+def subsetWithDup1(nums):
     n = len(nums)
     res = []
     for i in range(1 << n):
@@ -8,13 +8,15 @@ def subsets(nums):
         for j in range(n):
             if i & 1 << j:
                 subset.append(nums[j])
-        res.append(subset)
+        subset.sort()       
+        if subset not in res:
+            res.append(subset)
 
     return res
 
 
 
-def subsetsWithDup(nums):
+def subsetsWithDup2(nums):
     res = []
     subset = []
 
@@ -32,6 +34,6 @@ def subsetsWithDup(nums):
     return res
 
 
-nums = [1,2,3]
+nums = [1,2,2,3]
 print(subsets(nums))
 print(subsetsWithDup(nums))
