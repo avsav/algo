@@ -17,23 +17,29 @@ def subsetsWithDup1(nums):
 
 
 def subsetsWithDup2(nums):
-    res = []
+    n = len(nums)
+    nums.sort()
+    
     subset = []
+    res = []
 
     def backtrack(i):
-        if i >= len(nums):
-            res.append(subset.copy())
+        if i == n:
+            res.append(subset[::])
             return
         subset.append(nums[i])
         backtrack(i + 1)
         subset.pop()
+        while i + 1 < n and nums[i] == nums[i + 1]:
+            i += 1
         backtrack(i + 1)
     
     backtrack(0)
+
 
     return res
 
 
 nums = [1,2,2,3]
-print(subsetsWithDup1(nums))
+#print(subsetsWithDup1(nums))
 print(subsetsWithDup2(nums))
