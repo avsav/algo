@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/summary-ranges/
 
-def summaryRanges(nums):
+def summaryRanges1(nums):
     if not nums:
         return []
     n = len(nums)
@@ -17,5 +17,18 @@ def summaryRanges(nums):
 
     return res
 
+
+def summaryRanges2(nums):
+    res = []
+    for num in nums:
+        if res and res[-1][1] == num - 1:
+            res[-1][1] = num
+        else:
+            res.append([num,num])
+
+    return [f"{a}->{b}" if a != b else f"{a}" for a, b in res]
+
+
+
 nums = [0, 2, 3, 4, 6, 8, 9]
-print(summaryRanges(nums))
+print(summaryRanges2(nums))
