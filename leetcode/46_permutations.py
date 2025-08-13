@@ -39,15 +39,34 @@ def rev(nums, start, end):
 
 
 
+def permute2(nums):
+    n = len(nums)
+    res = []
+
+    def backtrack(i):
+        if i == n:
+            res.append(nums[:])
+            return
+        
+        for j in range(i, n):
+            nums[i], nums[j] = nums[j], nums[i]
+            backtrack(i + 1)
+
+    backtrack(0)
+
+    return res
+
+
+
 nums1 = [1, 3, 5, 4, 2]
-nums2 = [1, 2, 3, 4]
+nums2 = [1, 2, 3]
 nums3 = [3, 2, 1]
 nums4 = [0, 1]
 nums5 = [1, 3, 2] 
-print(next_permutation(nums5))
-rev(nums1, 0, 4)
-print(nums1)
-#print(permute(nums2))
+#print(next_permutation(nums5))
+#rev(nums1, 0, 4)
+#print(nums1)
+print(permute2(nums2))
 
 
 
