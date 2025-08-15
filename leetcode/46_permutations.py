@@ -51,6 +51,7 @@ def permute2(nums):
         for j in range(i, n):
             nums[i], nums[j] = nums[j], nums[i]
             backtrack(i + 1)
+            nums[i], nums[j] = nums[j], nums[i]
 
     backtrack(0)
 
