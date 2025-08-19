@@ -5,6 +5,7 @@ from functools import cmp_to_key
 def largestNumber(nums):
     n = len(nums)
 
+
     def compare(a, b):
         n = len(str(a))
         m = len(str(b))
@@ -16,14 +17,20 @@ def largestNumber(nums):
     res  = ""
     for i in range(n):
         res += str(nums[i])
+    
+    cnt = 0
+    for i in range(n):
+        if res[i] == "0":
+            cnt += 1
+    if cnt == len(res):
+        return res[0]
 
     return res
 
 
 
 
-
-
 nums1 = [2,10]
 nums2 = [3,30,34,5,9]
-print(largestNumber(nums2))
+nums3 = [0,0,0,0]
+print(largestNumber(nums3))
