@@ -14,6 +14,7 @@ def maxDistToClosest(seats):
     return max_dist
 
 
+
 seats1 = [1,0,0,0,1,0,1]
 seats2 = [1,0,0,0]
 seats3 = [0,1]
