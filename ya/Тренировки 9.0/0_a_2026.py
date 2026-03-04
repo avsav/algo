@@ -14,8 +14,10 @@ def f(s):
     return ''.join(res)
 
 
-#s = int(input())
+#s = input()
 s1 = "8512#12#15#23#15#18#12#4"
 s2 = "852"
 s3 = "1212#"
-print(f(s3))
+s4 = "12#"
+s5 = ""
+print(f(s1))
