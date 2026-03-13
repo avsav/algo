@@ -2,7 +2,7 @@ import sys
 
 
 def f():
-    return 0
+    pass
 
 
 def main():
