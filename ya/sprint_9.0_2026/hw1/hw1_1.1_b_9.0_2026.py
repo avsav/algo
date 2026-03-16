@@ -13,7 +13,8 @@ def set_of_floors(m, k2, p2, n2):
     k_set = set()
     k = a
     while k >= a and k < b:
-        k_set.add(k)
+        if math.ceil((k2 - k*m*(p2 - 1)) / k) == n2:
+            k_set.add(k)
         k += 1
     return k_set
 
@@ -74,11 +75,12 @@ def main():
     k17, m7, k27, p27, n27 = 25, 3, 1, 1, 1          #output 0 0
     k18, m8, k28, p28, n28 = 1, 3, 1, 3, 1           #output -1 -1
     k19, m9, k29, p29, n29 = 1, 3, 1, 1, 3           #output -1 -1
-    k10, m10, k210, p210, n210 = 1, 1, 42, 1, 1      #output 1 1
-    k111, m11, k211, p211, n211 = 1, 2, 42, 1, 5      #output -1 -1
-    k12, m12, k212, p212, n212 = 501, 20, 500, 1, 1  #output 1 0
-    k13, m13, k213, p213, n213 = 5, 1000, 5, 1, 2    #output 1 2
-    f(k111, m11, k211, p211, n211)
+    k110, m10, k210, p210, n210 = 1, 1, 42, 1, 1     #output 1 1
+    k111, m11, k211, p211, n211 = 1, 2, 42, 1, 5     #output -1 -1
+    k112, m12, k212, p212, n212 = 501, 20, 500, 1, 1 #output 1 0
+    k113, m13, k213, p213, n213 = 5, 1000, 5, 1, 2   #output 1 2
+    k114, m14, k214, p214, n214 = 500, 5, 353, 3, 3  #output 4 3
+    f(k114, m14, k214, p214, n214)
  
 
 if __name__ == '__main__':
