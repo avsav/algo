@@ -6,11 +6,11 @@ def f(n, m, a):
 
 
 def main():
-    """
-    Пример ввода и вывода числа n, где -10^9 < n < 10^9:
+    #n, m = map(int, input().split())
+    #a = [input() for _ in range(n)]
     n = int(input())
-    print(n)
-    """
-    n, m = map(int, input().split())
-    m = int(input())
-    print(n, m)
+    print("Dura")
+
+
+if __name__ == '__main__':
+    main()
