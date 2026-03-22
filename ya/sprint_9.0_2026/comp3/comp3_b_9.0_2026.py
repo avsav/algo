@@ -5,7 +5,7 @@ def f(n):
     ans = n - 1
     for var in {n, 2*n - 1, 2*n, 2*n + 1}:
        r = 1
-       while r*r <= var:
+       while r * r <= var:
             if var % r == 0:
                 if var == n:
                     m = var // r
