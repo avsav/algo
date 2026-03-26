@@ -7,7 +7,7 @@ def f(n, names, scores):
     for s in scores:
         a1, b1 = map(int, s[0].split(':'))
         t = s[1]
-        names[t] = names.get(t) + a1 - a0 + b1 - b0
+        names[t] += + a1 - a0 + b1 - b0
         a0, b0 = a1, b1
     ans = max(names.items(), key=lambda n: n[1])
     
