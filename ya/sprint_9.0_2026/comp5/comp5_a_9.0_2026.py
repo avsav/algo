@@ -12,10 +12,14 @@ def f(n, xd):
 
     a0, b0 = xd[0][0], xd[0][1]
     for a, b in xd:
-        if max(a0, a) <= min(b0, b):
-            ans = min(b0, b)
+        a = max(a, a0)
+        b = min(b, b0)
+        if a <= b:
+            ans = b
         else:
             return -1
+        a0 = a
+        b0 = b
 
     return ans
 
