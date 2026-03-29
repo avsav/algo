@@ -4,19 +4,14 @@ import time
 
 def f(n, a):
     guests = set(i for i in range(n))
-    shift = 0
     shifts = set()
-    #shifts = [0] * n
     for i in range(n):
-        k = a.index(i)
-        if k >= i:
-            shift = (n - k + i) % n
+        if i <= a[i]:
+            shift = a[i] - i
         else:
-            shift = i - k
+            shift = n - i + a[i]
         shifts.add(shift)
-        #shifts[i] = shift
-
-        
+  
     """
     for j in range(n):
         for i in range(n):
@@ -46,11 +41,18 @@ def f(n, a):
         return -1
     
     ans = min(guests - shifts)
-    
+
     return ans
+    """
+    for i in range(n):
+        if not i in shifts:
+            return i
+
+    return -1
+    """
 
 
-def main():
+def main():   
     #n = int(input())
     #a = [int(i) - 1 for i in input().split()]
     with open("in2_comp6_b_9.0_2026.txt") as fin:
@@ -60,8 +62,6 @@ def main():
     t = time.perf_counter()
     print(f(n, a))
     print(f"Elapsed time: {time.perf_counter() - t}")
-
-    #print(a)
 
 
 if __name__ == '__main__':
