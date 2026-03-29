@@ -1,17 +1,15 @@
 import sys
 
 
-def f(n, xd):
-    ans = 0
-
+def f(string):
+    ans = "".join(sorted(string, reverse=True))
 
     return ans
 
 
 def main():
-    n = int(input())
-    xd = [list(map(int, input().split())) for _ in range(n)]
-    print(f(n, xd))
+    string = input()
+    print(f(string))
 
 
 if __name__ == '__main__':
