@@ -181,7 +181,7 @@ $2\times 1$ (её можно также повернуть на 90 градус�
 
 
 
-<details><summary><b>Блок 2: Сложность, тестирование, особые случаи</b></summary>
+<details><summary><b>Блок 2: Множества и словари</b></summary>
 
 
 <details><summary><b>Соревнование 2</b></summary>
