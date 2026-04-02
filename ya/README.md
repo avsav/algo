@@ -334,4 +334,18 @@ $2\times 1$ (её можно также повернуть на 90 градус�
 
 
 
+<details><summary><b>Блок 3: Префиксные суммы и два указателя</b></summary>
+
+
+<details><summary><b>Соревнование 7</b></summary>
+
+
+
+</details>
+
+
+
+
+</details>
+
 </details>
