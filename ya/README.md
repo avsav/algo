@@ -232,6 +232,22 @@ $2\times 1$ (её можно также повернуть на 90 градус�
 
 </details>
 
+
+<details><summary><b>Соревнование 2</b></summary>
+
+
+
+</details>
+
+
+
+<details><summary><b>Соревнование 3</b></summary>
+
+
+
+</details>
+
+
 </details>
 
 
