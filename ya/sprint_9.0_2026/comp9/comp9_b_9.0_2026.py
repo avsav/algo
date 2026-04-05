@@ -2,21 +2,40 @@ import sys
 
 
 def f(n, k, a):
-    ans = 0
-    min_sum = min(0, a[0])
-    curr_sum = 0
+    min1 = 0
+    min2 = 10**11
+    max_sum = 0
+    prefix = 0
+    """
+    prefix = [0]
     for i in range(n):
-        curr_sum += a[i]
-        if min_sum % k != curr_sum % k:
-            ans = max(ans, curr_sum - min_sum)
-        min_sum = min(min_sum, curr_sum)
+        prefix.append(prefix[-1] + a[i])
+    """
+    for i in range(n):
+        prefix += a[i]
+        if prefix - min1 > max_sum and (prefix - min1) % k:
+            max_sum = prefix - min1
+        if prefix - min2 > max_sum and (prefix - min2) % k:
+            max_sum = prefix - min2
+        if prefix < min1:
+            if min1 % k == prefix % k:
+                min1 = prefix
+            else:
+                min2 = min1
+                min1 = prefix
+        if prefix > min1 and prefix < min2 and prefix % k != min1 % k:
+            min2 = prefix
 
-    return ans
+    return max_sum
 
 
 def main():
-    #n, k = map(int, input().split())
-    #a = list(map(int, input().split()))
+    """
+    n, k = map(int, input().split())
+    a = list(map(int, input().split()))
+    print(f(n, k, a))
+    """
+    #"""
     n1, k1 = 3, 6
     a1 = [3,2,1]
     print(n1, k1, a1, f(n1, k1, a1) == 5)
@@ -34,8 +53,11 @@ def main():
     print(n5, k5, a5, f(n5, k5, a5) == 0)
     n6, k6 = 20, 5
     a6 = [-58,61,183,-94,180,-75,-76,-76,-29,-72,-59,162,-16,-18,102,-42,-34,186,-45,70]
-    print(n6, k6, a6, f(n6, k6, a6) == 0)
-    #print(f(n, k, a))
+    print(n6, k6, a6, f(n6, k6, a6) == 308)
+    n7, k7 = 10, 2
+    a7 = [-4,-10,10,5,3,-3,0,-9,-7,-7]
+    print(n7, k7, a7, f(n7, k7, a7) == 15)
+    #"""
 
 
 if __name__ == '__main__':
