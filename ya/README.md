@@ -809,7 +809,7 @@ $K$ — это несчастливое для Васи число.
 | Ввод | Вывод |
 | ---- | ----- |
 | 2 7 10<br>Next<br>a<br>b<br>Copy<br>Next<br>Paste | abab |
-| 10 7 10<br>Copy<br>Backspace<br>Paste<br>Paste<br>Paste<br>Backspace | aaba |
+| 10 7 10<br>Copy<br>Backspace<br>Paste<br>Paste<br>Backspace | aaba |
 | 1 7 3<br>a<br>Copy<br>Paste<br>Copy<br>Paste<br>Copy<br>Paste | aaa |
 | 3 5 10<br>a<br>b<br>Next<br>c<br>Next | Empty |
 
