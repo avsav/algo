@@ -77,7 +77,19 @@ def bin_pow(n, m):
 
 #### Factorization ####
 def factorization(n):
-    pass
+    ans = ["1"]
+    k = 2
+    while k * k <= n:
+        while not n % k:
+            ans.append(str(k))
+            n //= k
+        k += 1
+    if n > 1:
+        ans.append(str(n))
+
+    return " * ".join(ans)
+
+
 
 
 """
@@ -103,4 +115,6 @@ print(binary_search(nums, 12))
 
 #print(gcd(12, 8))
 
-print(bin_pow(2, 5))
+#print(bin_pow(2, 5))
+
+#print(factorization(10780))
