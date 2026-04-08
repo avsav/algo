@@ -74,6 +74,12 @@ def bin_pow(n, m):
 
     return ans
 
+
+#### Factorization ####
+def factorization(n):
+    pass
+
+
 """
 arr0 = [2,8,7,1,3,5,6,4]
 arr1 = [1,2,7,3,4,0,-1,3,8,10,12,1,6,4,-10,20]
