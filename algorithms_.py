@@ -66,7 +66,7 @@ def gcd(a, b):
 def bin_pow(n, m):
     ans = 1
     M = m
-    while M > 0:
+    while M:
         if M & 1:
             ans *= n
         n *= n
