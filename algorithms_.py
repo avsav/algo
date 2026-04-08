@@ -61,7 +61,18 @@ def gcd(a, b):
     
     return gcd(a % b, a)
 
- 
+
+#### Bin pow ####
+def bin_pow(n, m):
+    ans = 1
+    M = m
+    while M > 0:
+        if M & 1:
+            ans *= n
+        n *= n
+        M >>= 1
+
+    return ans
 
 """
 arr0 = [2,8,7,1,3,5,6,4]
@@ -85,3 +96,5 @@ print(binary_search(nums, 12))
 """
 
 #print(gcd(12, 8))
+
+print(bin_pow(2, 5))
