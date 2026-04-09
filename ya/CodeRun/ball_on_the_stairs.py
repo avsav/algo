@@ -16,6 +16,13 @@ def f1(n):
 
 
 def f2(n):
+    if n == 1:
+        return 1
+    if n == 2:
+        return 2
+    if n == 3:
+        return 4
+    
     prev1 = 1
     prev2 = 2
     curr = 4
