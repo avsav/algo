@@ -884,7 +884,7 @@ $K$ — это несчастливое для Васи число.
 | ---- | ----- |
 | 3<br>AAA<br>4<br>ABA<br>ABA<br>CBA<br>CAA | 1<br>1 2 |
 | 6<br>ABCDAB<br>3<br>ABCCCC<br>BBCDCC<br>ACCDCC | 1<br>1 2<br>1 3<br>2 3 |
-| 5<br>CACBD<br>5<br>DACBD<br>DACBD<br>CACBD<brAACBD<br>CACBD | 1<br>1 2 |
+| 5<br>CACBD<br>5<br>DACBD<br>DACBD<br>CACBD<br>AACBD<br>CACBD | 1<br>1 2 |
 
 </details>
 
