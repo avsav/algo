@@ -13,6 +13,7 @@ def valid_parenthesis(string):
     return not stack
 
 
+# O(n) solution
 def f1(string):
     n = len(string)
     k = 0
@@ -29,8 +30,20 @@ def f1(string):
     return "NO"
 
 
+# Not optimal solution: sliding window
+def f2(string):
+    n = len(string)
+    string *= 2
+    for i in range(n + 1):
+        if valid_parenthesis(string[i : i + n]):
+            return "YES"
+
+    return "NO"
+
+
 def main():
     #string = input()
+    """
     string1 = "}()[]{"
     print(string1, f1(string1) == "YES")
     string2 = "}([)]{"
@@ -43,6 +56,19 @@ def main():
     print(string5, f1(string5) == "YES")
     string6 = "()" 
     print(string6, f1(string6) == "YES")
+    """
+    string1 = "}()[]{"
+    print(string1, f2(string1) == "YES")
+    string2 = "}([)]{"
+    print(string2, f2(string2) == "NO")
+    string3 = "()]["
+    print(string3, f2(string3) == "YES")
+    string4 = "][]][{}]{()}[]{({})()}(){}{}[](){}{}{()}[][{}[]{}[{}]()][]{}()[][]()[]{}[]()()()([([])][])[]{}{}(()){}[]()()[(())][]()[]{{}}{}[][[]()()]{}{}(){[()]}[]{[]}[]()[]()[][](){[]}{}[]()()[][[]]({{}})[{}(){}["
+    print(string4, f2(string4) == "YES")
+    string5 = "][]][{}(){}[" 
+    print(string5, f2(string5) == "YES")
+    string6 = "()" 
+    print(string6, f2(string6) == "YES")
 
 
 if __name__ == '__main__':
