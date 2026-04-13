@@ -118,3 +118,4 @@ print(binary_search(nums, 12))
 #print(bin_pow(2, 5))
 
 #print(factorization(10780))
+#print(factorization(41472))
